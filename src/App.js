@@ -8,48 +8,48 @@ const [score, setScore] = useState(0);
 const [currentQuestion, setCurrentQuestion] = useState(0);
 
 const questions = [{
-  text: "Jaki jest mój ulubiony kolor?",
+  text: "Wewnątrz którego elementu HTML umieszczamy JavaScript?",
   options: [
-   { id: 0, text: "aaaaaaaaa", isCorrect: false},
-   { id: 1, text: "bbb", isCorrect: false},
-   { id: 2, text: "ccc", isCorrect: false},
-   { id: 3, text: "afdddda", isCorrect: true},
+   { id: 0, text: "<scripting>", isCorrect: false},
+   { id: 1, text: "<javascript>", isCorrect: false},
+   { id: 2, text: "<js>", isCorrect: false},
+   { id: 3, text: "<script>", isCorrect: true},
   ],
 },
 {
-  text: "B",
+  text: "Jak napisać instrukcję IF w JavaScript?",
   options: [
-   { id: 0, text: "aaaaaaaaa", isCorrect: false},
-   { id: 1, text: "aaaaaaaaa", isCorrect: false},
-   { id: 2, text: "aaaaaaaaa", isCorrect: false},
-   { id: 3, text: "aaaaaaaaa", isCorrect: true},
+   { id: 0, text: "if i = 5", isCorrect: false},
+   { id: 1, text: "if i == 5 then", isCorrect: false},
+   { id: 2, text: "if i = 5 then", isCorrect: false},
+   { id: 3, text: "if (i == 5)", isCorrect: true},
   ],
 },
 {
-  text: "C",
+  text: "Jak zaczyna się pętla FOR?",
   options: [
-   { id: 0, text: "aaaaaaaaa", isCorrect: false},
-   { id: 1, text: "aaaaaaaaa", isCorrect: false},
-   { id: 2, text: "aaaaaaaaa", isCorrect: false},
-   { id: 3, text: "aaaaaaaaa", isCorrect: true},
+   { id: 0, text: "for i = 1 to 5", isCorrect: false},
+   { id: 1, text: "for (i = 0; i <=5, i++)", isCorrect: true},
+   { id: 2, text: "for (i = 0; i <= 5)", isCorrect: false},
+   { id: 3, text: "for (i <= 5, i++)", isCorrect: false},
   ],
 },
 {
-  text: "D",
+  text: "Co zwróci nam 1 == '1'?",
   options: [
-   { id: 0, text: "aaaaaaaaa", isCorrect: false},
-   { id: 1, text: "aaaaaaaaa", isCorrect: false},
-   { id: 2, text: "aaaaaaaaa", isCorrect: false},
-   { id: 3, text: "aaaaaaaaa", isCorrect: true},
+   { id: 0, text: "true", isCorrect: true},
+   { id: 1, text: "false", isCorrect: false},
+   { id: 2, text: "0", isCorrect: false},
+   { id: 3, text: "1", isCorrect: false},
   ],
 },
 {
-  text: "E",
+  text: "Które z poniższych są prymitywnymi typami danych w JavaScript?",
   options: [
-   { id: 0, text: "aaaaaaaaa", isCorrect: false},
-   { id: 1, text: "aaaaaaaaa", isCorrect: false},
-   { id: 2, text: "aaaaaaaaa", isCorrect: false},
-   { id: 3, text: "aaaaaaaaa", isCorrect: true},
+   { id: 0, text: "string", isCorrect: false},
+   { id: 1, text: "number", isCorrect: false},
+   { id: 2, text: "boolean", isCorrect: false},
+   { id: 3, text: "wszystkie z wyżej wymienionych", isCorrect: true},
   ],
 },
 
@@ -91,7 +91,7 @@ const restartGame = () => {
       ) : (
       <div className="question-card">
         <h2>Pytanie {currentQuestion + 1} z {questions.length}</h2>
-        <h3 className="question-text">Blablabla</h3>
+        <h3 className="question-text">{questions[currentQuestion].text}</h3>
         <ul>
          {questions[currentQuestion].options.map((option) => {
           return (

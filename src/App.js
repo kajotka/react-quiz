@@ -74,10 +74,6 @@ const restartGame = () => {
 }
 
 
-
-
-
-
   return (
     <div className="App">
       <h1>JavaScript Quiz</h1>
